@@ -61,6 +61,9 @@ function playGame(round) {
 		console.log(`Round ${index}`);
 		console.log(playRound(humanSelection, computerSelection));
 	}
+
+	console.log(`Human: ${humanScore}. Computer: ${computerScore}`);
+	console.log(declareWinner(humanScore, computerScore));
 }
 
 function declareWinner(humanScore, computerScore) {
@@ -77,7 +80,3 @@ let humanScore = 0;
 let computerScore = 0;
 
 playGame(5);
-
-console.log("Human: " + humanScore);
-console.log("Computer: " + computerScore);
-console.log(declareWinner(humanScore, computerScore));
