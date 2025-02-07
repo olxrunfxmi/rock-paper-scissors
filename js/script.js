@@ -31,18 +31,17 @@ function getHumanChoice() {
 	return formatHumanChoice;
 }
 
-let humanScore = 0;
-let computerScore = 0;
-
 function playRound(humanChoice, computerChoice) {
 	let humanChoiceNum = gameChoiceNum(humanChoice, computerChoice);
 	let computerChoiceNum = gameChoiceNum(computerChoice, humanChoice);
 
 	if (humanChoiceNum > computerChoiceNum) {
+		humanScore += 1;
 		return `You win! ${humanChoice} beats ${computerChoice}`;
 	} else if (humanChoiceNum == computerChoiceNum) {
 		return `A draw. A worthy opponent.`;
 	} else {
+		computerScore += 1;
 		return `You lose! ${computerChoice} beats ${humanChoice}`;
 	}
 }
@@ -54,12 +53,30 @@ function gameChoiceNum(str, opp) {
 	if (str === "paper") return 0;
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame(round) {
+	for (let index = 1; index <= round; index++) {
+		const humanSelection = getHumanChoice();
+		const computerSelection = getComputerChoice();
 
-// Debugger
-console.log("Human:" + humanSelection);
-console.log("Computer:" + computerSelection);
-// Debugger
+		console.log(`Round ${index}`);
+		console.log(playRound(humanSelection, computerSelection));
+	}
 
-console.log(playRound(humanSelection, computerSelection));
+	console.log("Human: " + humanScore);
+	console.log("Computer: " + computerScore);
+}
+
+function declareWinner(humanScore, computerScore) {
+	if (humanScore > computerScore) {
+		return "You win.";
+	} else if (computerScore > humanScore) {
+		return "Computer wins.";
+	} else {
+		return "A draw";
+	}
+}
+
+let humanScore = 0;
+let computerScore = 0;
+playGame(5);
+console.log(declareWinner(humanScore, computerScore));
