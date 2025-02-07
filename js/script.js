@@ -31,6 +31,13 @@ function getHumanChoice() {
 	return formatHumanChoice;
 }
 
+function gameChoiceNum(str, opp) {
+	if (str === "rock" && opp == "paper") return -2;
+	if (str === "rock") return 2;
+	if (str === "scissors") return 1;
+	if (str === "paper") return 0;
+}
+
 function playRound(humanChoice, computerChoice) {
 	let humanChoiceNum = gameChoiceNum(humanChoice, computerChoice);
 	let computerChoiceNum = gameChoiceNum(computerChoice, humanChoice);
@@ -46,13 +53,6 @@ function playRound(humanChoice, computerChoice) {
 	}
 }
 
-function gameChoiceNum(str, opp) {
-	if (str === "rock" && opp == "paper") return -2;
-	if (str === "rock") return 2;
-	if (str === "scissors") return 1;
-	if (str === "paper") return 0;
-}
-
 function playGame(round) {
 	for (let index = 1; index <= round; index++) {
 		const humanSelection = getHumanChoice();
@@ -61,9 +61,6 @@ function playGame(round) {
 		console.log(`Round ${index}`);
 		console.log(playRound(humanSelection, computerSelection));
 	}
-
-	console.log("Human: " + humanScore);
-	console.log("Computer: " + computerScore);
 }
 
 function declareWinner(humanScore, computerScore) {
@@ -78,5 +75,9 @@ function declareWinner(humanScore, computerScore) {
 
 let humanScore = 0;
 let computerScore = 0;
+
 playGame(5);
+
+console.log("Human: " + humanScore);
+console.log("Computer: " + computerScore);
 console.log(declareWinner(humanScore, computerScore));
