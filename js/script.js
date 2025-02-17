@@ -1,3 +1,58 @@
+// Choice and Score Trackers
+let userChoice = "";
+let humanScore = 0;
+let computerScore = 0;
+
+// Reference to Labels and Buttons
+let container = document.querySelector(".container");
+let humanScoreLabel = document.querySelector(".user-score > p");
+let computerScoreLabel = document.querySelector(".computer-score > p");
+let statusLabel = document.querySelector(".status-code");
+const buttons = document.querySelectorAll("button");
+
+// Apply EventListeners -> Game starts Here
+buttons.forEach((button) => {
+	button.addEventListener("click", () => {
+		const humanSelection = button.id;
+		const computerSelection = getComputerChoice();
+
+		console.log(playRound(humanSelection, computerSelection));
+
+		// Check if game gets to round 5 and ends game.
+		if (humanScore === 5 || computerScore === 5) {
+			buttons.forEach((button) => {
+				button.disabled = true;
+			});
+
+			container.classList.toggle("blur");
+
+			let clearButton = document.createElement("button");
+			clearButton.textContent = "Start Again";
+			clearButton.classList.toggle("overlay");
+			document.body.appendChild(clearButton);
+
+			clearButton.addEventListener("click", () => {
+				buttons.forEach((button) => {
+					button.disabled = false;
+				});
+				resetGame();
+				clearButton.remove();
+			});
+		}
+	});
+});
+
+function resetGame() {
+	humanScore = 0;
+	computerScore = 0;
+	container.classList.toggle("blur");
+	displayChoice("human", "");
+	displayChoice("computer", "");
+	statusLabel.textContent = "start game";
+	humanScoreLabel.textContent = "";
+	computerScoreLabel.textContent = "";
+}
+
 function getComputerChoice() {
 	const Randomizer = Math.floor(Math.random() * 10);
 
@@ -10,27 +65,6 @@ function getComputerChoice() {
 	}
 }
 
-function getHumanChoice() {
-	let humanChoice, formatHumanChoice;
-
-	while (true) {
-		humanChoice = prompt("Rock, paper, scissors:");
-		if (humanChoice != null) {
-			formatHumanChoice = humanChoice.toLowerCase();
-		}
-
-		if (
-			formatHumanChoice === "rock" ||
-			formatHumanChoice === "paper" ||
-			formatHumanChoice === "scissors"
-		) {
-			break;
-		}
-	}
-
-	return formatHumanChoice;
-}
-
 function gameChoiceNum(str, opp) {
 	if (str === "rock" && opp == "paper") return -2;
 	if (str === "rock") return 2;
@@ -38,19 +72,54 @@ function gameChoiceNum(str, opp) {
 	if (str === "paper") return 0;
 }
 
+function selectChoiceUI(choice) {
+	switch (choice) {
+		case "rock":
+			textContent = "🪨";
+			break;
+		case "paper":
+			textContent = "📃";
+			break;
+		case "scissors":
+			textContent = "✂️";
+	}
+
+	return textContent;
+}
+
+function displayChoice(user, content) {
+	if (user === "computer") {
+		const computer = document.querySelector(".computer-choice");
+		computer.textContent = content;
+	} else if (user === "human") {
+		const human = document.querySelector(".user-choice");
+		human.textContent = content;
+	}
+}
+
 function playRound(humanChoice, computerChoice) {
+	displayChoice("human", selectChoiceUI(humanChoice));
+	displayChoice("computer", selectChoiceUI(computerChoice));
+
 	let humanChoiceNum = gameChoiceNum(humanChoice, computerChoice);
 	let computerChoiceNum = gameChoiceNum(computerChoice, humanChoice);
 
 	if (humanChoiceNum > computerChoiceNum) {
 		humanScore += 1;
-		return `You win! ${humanChoice} beats ${computerChoice}`;
+		statusLabel.textContent = "beats";
+		console.log(`You win! ${humanChoice} beats ${computerChoice}`);
 	} else if (humanChoiceNum == computerChoiceNum) {
-		return `A draw. A worthy opponent.`;
+		statusLabel.textContent = "draws";
+		console.log(`A draw. A worthy opponent.`);
 	} else {
 		computerScore += 1;
-		return `You lose! ${computerChoice} beats ${humanChoice}`;
+		statusLabel.textContent = "loses to";
+		console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
 	}
+
+	humanScoreLabel.textContent = humanScore === 5 ? "You win!" : `${humanScore}`;
+	computerScoreLabel.textContent =
+		computerScore === 5 ? "Computer wins" : `${computerScore}`;
 }
 
 function playGame(round) {
@@ -75,8 +144,3 @@ function declareWinner(humanScore, computerScore) {
 		return "A draw";
 	}
 }
-
-let humanScore = 0;
-let computerScore = 0;
-
-playGame(5);

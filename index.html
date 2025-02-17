@@ -3,10 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
     <title>Rock, Paper, Scissors Game</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="heading">
+            <div class="heading-left">
+                <span>A Game</span>
+                <h1>Rock, Paper, Scissors</h1>
+            </div>
+            <div class="heading-right">
+                <p>Rock paper scissors is an intransitive hand game, usually played between two people, in which each player simultaneously forms one of three shapes with an outstretched hand. These shapes are "rock", "paper", and "scissors".</p>
+                <a href="http://wikipedia.org">Wikipedia</a>
+            </div>
+        </div>
+        <div class="stack">
+            <h6>War Board</h6>
+            <div class="choice-board">
+                <div class="notifier">
+                    <span>Your choice</span>
+                    <span>Computer choice</span>
+                </div>
+                <div class="user-choice"></div>
+                <div class="status-code">start game</div>
+                <div class="computer-choice"></div>
+            </div>
+            <div class="score-board">
+                <div class="score user-score">
+                    <span>Your Score</span>
+                    <p></p>
+                </div>
+                <div class="score computer-score">
+                    <span>Computer Score</span>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+    </div>
 </body>
 </html>
