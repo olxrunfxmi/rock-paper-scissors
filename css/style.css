@@ -115,8 +115,8 @@ span {
 .overlay {
     opacity: 1;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50vh;
+    left: 45vw;
 }
 
 .notifier {
@@ -178,6 +178,7 @@ span {
     border: 3px solid #7CC6FE;
     border-radius: 0.5rem;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 span {
@@ -190,6 +191,20 @@ span {
 
 .computer {
     background-color: #CFF27E;
+}
+
+.btn-overlay {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.tool-btn {
+    padding: 0.75rem 1rem;
+    border-radius: 0.45rem;
+    border: none;
+    background-color: #E072A4;
+    font-family: "Gentium Book Plus", serif;
+    cursor: pointer;
 }
 
 /* Media queries */

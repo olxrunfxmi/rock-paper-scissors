@@ -26,10 +26,28 @@ buttons.forEach((button) => {
 
 			container.classList.toggle("blur");
 
+			let buttonContainer = document.createElement("div");
 			let clearButton = document.createElement("button");
+			let cancelButton = document.createElement("button");
+
+			cancelButton.textContent = "Close";
 			clearButton.textContent = "Start Again";
-			clearButton.classList.toggle("overlay");
-			document.body.appendChild(clearButton);
+
+			buttonContainer.classList.toggle("overlay");
+			buttonContainer.classList.toggle("btn-overlay");
+			clearButton.classList.toggle("tool-btn");
+			cancelButton.classList.toggle("tool-btn");
+
+			buttonContainer.appendChild(clearButton);
+			buttonContainer.appendChild(cancelButton);
+			document.body.appendChild(buttonContainer);
+
+			cancelButton.addEventListener("click", () => {
+				container.classList.toggle("blur");
+				clearButton.remove();
+				cancelButton.remove();
+				buttonContainer.remove();
+			});
 
 			clearButton.addEventListener("click", () => {
 				buttons.forEach((button) => {
@@ -37,6 +55,7 @@ buttons.forEach((button) => {
 				});
 				resetGame();
 				clearButton.remove();
+				cancelButton.remove();
 			});
 		}
 	});
