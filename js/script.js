@@ -126,14 +126,11 @@ function playRound(humanChoice, computerChoice) {
 	if (humanChoiceNum > computerChoiceNum) {
 		humanScore += 1;
 		statusLabel.textContent = "beats";
-		console.log(`You win! ${humanChoice} beats ${computerChoice}`);
 	} else if (humanChoiceNum == computerChoiceNum) {
 		statusLabel.textContent = "draws";
-		console.log(`A draw. A worthy opponent.`);
 	} else {
 		computerScore += 1;
 		statusLabel.textContent = "loses to";
-		console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
 	}
 
 	humanScoreLabel.textContent = humanScore === 5 ? "You win!" : `${humanScore}`;
