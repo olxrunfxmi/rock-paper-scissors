@@ -86,6 +86,7 @@ span {
 
 .board {
     display: flex;
+    flex-wrap: wrap;
     gap: 12px;
 }
 
@@ -99,6 +100,8 @@ span {
     flex: 7;
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
+    min-width: 274px;
 }
 
 .score-board {
@@ -138,6 +141,7 @@ span {
     font-family: "Gentium Book Plus", serif;
     font-size: 114px;
     line-height: 115%;
+    min-height: 8.19375rem;
 }
 
 .score-board {
@@ -151,6 +155,7 @@ span {
     padding: 0.5rem;
     border-radius: 5px;
     flex: 1;
+    min-width: 140px;
 }
 
 .user-score > p, .computer-score > p {
@@ -158,4 +163,31 @@ span {
     font-family: "Darumadrop One", serif;
     line-height: 105%;
     text-align: center;
+    margin-bottom: 3rem;
+}
+
+.bottom {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.bottom button {
+    padding: 24px;
+    background-color: #170C2F;
+    border: 3px solid #7CC6FE;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+}
+
+span {
+    font-size: 0.75rem;
+}
+
+.human {
+    background-color: #E072A4;
+}
+
+.computer {
+    background-color: #CFF27E;
 }

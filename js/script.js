@@ -49,8 +49,8 @@ function resetGame() {
 	displayChoice("human", "");
 	displayChoice("computer", "");
 	statusLabel.textContent = "start game";
-	humanScoreLabel.textContent = "";
-	computerScoreLabel.textContent = "";
+	humanScoreLabel.textContent = "0";
+	computerScoreLabel.textContent = "0";
 }
 
 function getComputerChoice() {
