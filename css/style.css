@@ -91,12 +91,11 @@ span {
 
 .choice-board, .score-board {
     display: flex;
-    border-radius: 5px;
-    background-color: #4D4168;
-    padding: 0.5rem;
 }
 
 .choice-board {
+    padding: 0.5rem;
+    background-color: #4D4168;
     flex: 7;
     display: flex;
     flex-direction: column;
@@ -147,9 +146,16 @@ span {
     gap: 12px;
 }
 
-.user-choice, .computer-choice {
+.user-score, .computer-score {
+    background-color: #4D4168;
+    padding: 0.5rem;
+    border-radius: 5px;
+    flex: 1;
+}
+
+.user-score > p, .computer-score > p {
     font-size: 64px;
     font-family: "Darumadrop One", serif;
     line-height: 105%;
-    flex: 1;
+    text-align: center;
 }
