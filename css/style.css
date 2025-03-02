@@ -1,224 +1,250 @@
-@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    background-color: #211142;
-    color: #E9E7EC;
-    font-family: "Gentium Book Plus", serif;
+	background-color: #211142;
+	color: #e9e7ec;
+	font-family: "Gentium Book Plus", serif;
 }
 
 h1 {
-    font-family: "Darumadrop One", serif;
-    font-style: normal;
-    font-size: 3rem;
-    line-height: 44px;
+	font-family: "Darumadrop One", serif;
+	font-style: normal;
+	font-size: 3rem;
+	line-height: 44px;
 }
 
 h6 {
-    font-size: 16px;
-    line-height: 115%;
+	font-size: 16px;
+	line-height: 115%;
 }
 
 .container {
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  /* flex-wrap: wrap-reverse; */
+	margin: 0 auto;
+	max-width: 960px;
+	padding: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	/* flex-wrap: wrap-reverse; */
 }
 
 .heading {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1rem;
-    margin-top: 64px;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 1rem;
+	margin-top: 64px;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
 }
 
 .heading-left {
-    max-width: 214px;
+	max-width: 214px;
 }
 
 span {
-    background-color: #C5EBC3;
-    color: #211142;
-    text-transform: uppercase;
-    padding: 0 10px;
-    border-radius: 10rem;
-    display: inline-block;
-    margin-bottom: 16px;
+	background-color: #c5ebc3;
+	color: #211142;
+	text-transform: uppercase;
+	padding: 0 10px;
+	border-radius: 10rem;
+	display: inline-block;
+	margin-bottom: 16px;
 }
 
 .heading-right {
-    max-width: 316px;
-    color: #BAB5C4;
-    text-align: right;
+	max-width: 316px;
+	color: #bab5c4;
+	text-align: right;
 }
 
 .heading-right > a {
-    color: #fff;
-    text-decoration: none;
-    background-color: rgb(255, 255, 255, 0.3);
-    padding: 2px 7px;
-    border-radius: 6px;
-    display: inline-block;
-    margin-top: 0.75rem;
+	color: #fff;
+	text-decoration: none;
+	background-color: rgb(255, 255, 255, 0.3);
+	padding: 2px 7px;
+	border-radius: 6px;
+	display: inline-block;
+	margin-top: 0.75rem;
 }
 
 .stack {
-    display: flex;
-    flex-direction: column;
-    background-color: #170C2F;
-    border: 3px solid #E5B25D;
-    border-radius: 7px;
-    padding: 12px;
-    gap: 8px;
+	display: flex;
+	flex-direction: column;
+	background-color: #170c2f;
+	border: 3px solid #e5b25d;
+	border-radius: 7px;
+	padding: 12px;
+	gap: 8px;
 }
 
 .board {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
 }
 
-.choice-board, .score-board {
-    display: flex;
+.choice-board,
+.score-board {
+	display: flex;
 }
 
 .choice-board {
-    padding: 0.5rem;
-    background-color: #4D4168;
-    flex: 7;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    min-width: 274px;
+	padding: 0.5rem;
+	background-color: #4d4168;
+	flex: 7;
+	display: flex;
+	flex-direction: column;
+	border-radius: 5px;
+	min-width: 274px;
 }
 
 .score-board {
-    flex: 2;
+	flex: 2;
 }
 
 .blur {
-    opacity: 0.3;
+	opacity: 0.3;
 }
 
 .overlay {
-    opacity: 1;
-    position: absolute;
-    top: 50vh;
-    left: 45vw;
+	opacity: 1;
+	position: absolute;
+	top: 50vh;
+	left: 45vw;
 }
 
 .notifier {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
 .choices {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 88px 0;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 88px 0;
 }
 
 .status-code {
-    font-size: 48px;
-    font-family: "Darumadrop One", serif;
-    line-height: 105%;
+	font-size: 48px;
+	font-family: "Darumadrop One", serif;
+	line-height: 105%;
 }
 
-.user-choice, .computer-choice {
-    font-family: "Gentium Book Plus", serif;
-    font-size: 114px;
-    line-height: 115%;
-    min-height: 8.19375rem;
+.user-choice,
+.computer-choice {
+	font-family: "Gentium Book Plus", serif;
+	font-size: 114px;
+	line-height: 115%;
+	min-height: 8.19375rem;
 }
 
 .score-board {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 }
 
-.user-score, .computer-score {
-    background-color: #4D4168;
-    padding: 0.5rem;
-    border-radius: 5px;
-    flex: 1;
-    min-width: 140px;
+.user-score,
+.computer-score {
+	background-color: #4d4168;
+	padding: 0.5rem;
+	border-radius: 5px;
+	flex: 1;
+	min-width: 140px;
 }
 
-.user-score > p, .computer-score > p {
-    font-size: 64px;
-    font-family: "Darumadrop One", serif;
-    line-height: 105%;
-    text-align: center;
-    margin-bottom: 3rem;
+.user-score > p,
+.computer-score > p {
+	font-size: 64px;
+	font-family: "Darumadrop One", serif;
+	line-height: 105%;
+	text-align: center;
+	margin-bottom: 3rem;
 }
 
 .bottom {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
+	display: flex;
+	gap: 16px;
+	justify-content: center;
 }
 
 .bottom button {
-    padding: 24px;
-    background-color: #170C2F;
-    border: 3px solid #7CC6FE;
-    border-radius: 0.5rem;
-    font-size: 1.5rem;
-    cursor: pointer;
+	padding: 24px;
+	background-color: #170c2f;
+	border: 3px solid #7cc6fe;
+	border-radius: 0.5rem;
+	font-size: 1.5rem;
+	cursor: pointer;
 }
 
 span {
-    font-size: 0.75rem;
+	font-size: 0.75rem;
 }
 
 .human {
-    background-color: #E072A4;
+	background-color: #e072a4;
 }
 
 .computer {
-    background-color: #CFF27E;
+	background-color: #cff27e;
 }
 
 .btn-overlay {
-    display: flex;
-    gap: 0.75rem;
+	display: flex;
+	gap: 0.75rem;
 }
 
 .tool-btn {
-    padding: 0.75rem 1rem;
-    border-radius: 0.45rem;
-    border: none;
-    background-color: #E072A4;
-    font-family: "Gentium Book Plus", serif;
-    cursor: pointer;
+	padding: 0.75rem 1rem;
+	border-radius: 0.45rem;
+	border: none;
+	background-color: #e072a4;
+	font-family: "Gentium Book Plus", serif;
+	cursor: pointer;
+}
+
+.bottom-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 8px;
+}
+
+section {
+	background-color: #7cc6fe;
+	color: #170c2f;
+	padding: 8px 8px;
+	border-radius: 12px;
+	margin-bottom: 24px;
+}
+
+section > p {
+	margin-bottom: 8px;
 }
 
 /* Media queries */
 @media (width <= 625px) {
-  .status-code {
-        font-size: 24px;
-    }
+	.status-code {
+		font-size: 24px;
+	}
 
-    .user-choice, .computer-choice {
-        font-size: 48px;
-        min-height: 64px;
-    }
+	.user-choice,
+	.computer-choice {
+		font-size: 48px;
+		min-height: 64px;
+	}
 
-    .heading-right {
-        text-align: left;
-    }
+	.heading-right {
+		text-align: left;
+	}
 }
